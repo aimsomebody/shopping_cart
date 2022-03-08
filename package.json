@@ -1,19 +1,16 @@
 {
-  "name": "combined",
-  "version": "1.0.0",
-  "description": "Integrated Vue app with Express on the same server",
-  "main": "server.js",
+  "name": "shopping_cart",
+  "description": "Project Four: Shopping Cart",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run server\" \"npm run serve\"",
+    "server": "node server",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "keywords": [
-    "vue",
-    "nodejs",
-    "express",
-    "rest",
-    "api"
-  ],
-    "dependencies": {
+  "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
@@ -30,6 +27,23 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0"
   },
-  "author": "Elbayi Asgarov",
-  "license": "ISC"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
