@@ -2,14 +2,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-const path = __dirname + '/app/views/';
+const path = __dirname;
 
 const app = express();
 
 const PRODUCT_DATA_FILE = path + 'server-product-data.json';
 const CART_DATA_FILE = path + 'server-cart-data.json';
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 443));
 
 app.use(express.static(path));
 app.use(bodyParser.json());
