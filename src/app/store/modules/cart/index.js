@@ -11,22 +11,22 @@ const mutations = {
 
 const actions = {
   getCartItems({ commit }) {
-    axios.get("/api/cart").then((response) => {
+    axios.get("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart").then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   addCartItem({ commit }, cartItem) {
-    axios.post("/api/cart", cartItem).then((response) => {
+    axios.post("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart", cartItem).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   removeCartItem({ commit }, cartItem) {
-    axios.post("/api/cart/delete", cartItem).then((response) => {
+    axios.post("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart/delete", cartItem).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   removeAllCartItems({ commit }) {
-    axios.post("/api/cart/delete/all").then((response) => {
+    axios.post("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart/delete/all").then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
