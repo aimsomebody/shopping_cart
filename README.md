@@ -1,4 +1,4 @@
-# Fullstack Vue
+# Fullstack Vue.Js + Node.Js
 Deployed to AWS CloudFront with Express-Server surving as backend-api on AWS Lambda:
 
 [Link to Deployed Project](https://d2acpuz75zwll2.cloudfront.net/)
