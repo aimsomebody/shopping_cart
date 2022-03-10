@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+const api_url = "https://9az3zv5u7b.execute-api.eu-north-1.amazonaws.com/";
 const state = {
   productItems: [],
 };
@@ -12,7 +13,7 @@ const mutations = {
 
 const actions = {
   getProductItems({commit}){
-      axios.get('https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/products').then((response)=>{
+      axios.get(api_url + 'products').then((response)=>{
         commit('UPDATE_PRODUCT_ITEMS', response.data);
       });
   },

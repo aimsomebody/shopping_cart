@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const api_url = "https://9az3zv5u7b.execute-api.eu-north-1.amazonaws.com/";
 const state = {
   cartItems: [],
 };
@@ -11,22 +12,22 @@ const mutations = {
 
 const actions = {
   getCartItems({ commit }) {
-    axios.get("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart").then((response) => {
+    axios.get(api_url + "cart").then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   addCartItem({ commit }, cartItem) {
-    axios.post("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart", cartItem).then((response) => {
+    axios.post(api_url + "cart", cartItem).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   removeCartItem({ commit }, cartItem) {
-    axios.post("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart/delete", cartItem).then((response) => {
+    axios.post(api_url + "/cart/delete", cartItem).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   removeAllCartItems({ commit }) {
-    axios.post("https://g0rpibk5w8.execute-api.eu-north-1.amazonaws.com/cart/delete/all").then((response) => {
+    axios.post(api_url + "cart/delete/all").then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
@@ -41,10 +42,10 @@ const getters = {
       }, 0)
       .toFixed(2);
   },
-  cartQuantity: state=>{
-    return state.cartItems.reduce((acc,cartItem)=>{
+  cartQuantity: (state) => {
+    return state.cartItems.reduce((acc, cartItem) => {
       return cartItem.quantity + acc;
-    },0);
+    }, 0);
   },
 };
 
