@@ -16,4 +16,3 @@ npm install
 npm run start
 ```
 
-The Node and Webpack servers are now running - watch the console output for instructions. Your entire application is now available at [http://localhost:8080/](http://localhost:8080/)
