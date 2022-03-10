@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api_url = "https://9az3zv5u7b.execute-api.eu-north-1.amazonaws.com/";
+const api_url = "https://yt3w800ur0.execute-api.us-west-2.amazonaws.com/";
 const state = {
   productItems: [],
 };
