@@ -1,5 +1,5 @@
 # Fullstack Vue.Js + Node.Js
-Deployed to AWS CloudFront with Express-Server surving as backend-api on AWS Lambda which reads and write to json files from S3 bucket:
+Deployed to AWS CloudFront with Express-Server surving as backend-api on AWS Lambda which reads from and write to json files in S3 bucket:
 
 [Link to Deployed Project](https://d2acpuz75zwll2.cloudfront.net/)
 
