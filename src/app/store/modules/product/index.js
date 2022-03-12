@@ -1,26 +1,31 @@
-import axios from 'axios';
+import axios from "axios";
 
-const api_url = "https://yt3w800ur0.execute-api.us-west-2.amazonaws.com/";
+const api_url = "https://sc-sls.vercel.app/";
 const state = {
   productItems: [],
 };
 
 const mutations = {
-  UPDATE_PRODUCT_ITEMS(state,payload){
+  UPDATE_PRODUCT_ITEMS(state, payload) {
     state.productItems = payload;
-  }
+  },
 };
 
 const actions = {
-  getProductItems({commit}){
-      axios.get(api_url + 'products').then((response)=>{
-        commit('UPDATE_PRODUCT_ITEMS', response.data);
-      });
+  getProductItems({ commit }) {
+    axios.get(api_url + "products").then((response) => {
+      commit("UPDATE_PRODUCT_ITEMS", response.data);
+      var products_loaded = document.getElementsByClassName("bar");
+      if (products_loaded.length > 0) {
+        var x = document.getElementById("app");
+        x.style.display = "block";
+      }
+    });
   },
 };
 
 const getters = {
-  productItems: state=>state.productItems,
+  productItems: (state) => state.productItems,
 };
 
 const productModule = {
@@ -29,6 +34,5 @@ const productModule = {
   actions,
   getters,
 };
-
 
 export default productModule;

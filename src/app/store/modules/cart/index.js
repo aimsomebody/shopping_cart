@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api_url = "https://yt3w800ur0.execute-api.us-west-2.amazonaws.com/";
+const api_url = "https://sc-sls.vercel.app/";
 const state = {
   cartItems: [],
 };
@@ -13,7 +13,14 @@ const mutations = {
 const actions = {
   getCartItems({ commit }) {
     axios.get(api_url + "cart").then((response) => {
+      const element = document.querySelector("div#app");
+      element.classList.add("bar");
       commit("UPDATE_CART_ITEMS", response.data);
+      var products_loaded = document.getElementsByClassName("product-list--item");
+      if (products_loaded.length > 0) {
+        var x = document.getElementById("app");
+        x.style.display = "block";
+      }
     });
   },
   addCartItem({ commit }, cartItem) {
