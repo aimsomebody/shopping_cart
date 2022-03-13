@@ -1,4 +1,5 @@
-
+Front-end running on Vercel(Zeit) and backend-api is serverless served on AWS Lambda:
+[Link to Deployed app](shopping-cart-five-omega.vercel.app}
 
 ## Vuex - Shopping Cart
 
