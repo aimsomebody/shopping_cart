@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api_url = "https://sc-sls.vercel.app/";
+const api_url = "https://4x1lz58l6j.execute-api.us-west-2.amazonaws.com/";
 const state = {
   productItems: [],
 };
